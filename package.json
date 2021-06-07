@@ -25,5 +25,11 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "gatsby-plugin-postcss": "^4.6.0",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.4"
   }
 }
