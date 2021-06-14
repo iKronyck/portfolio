@@ -1,3 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --cw: #fdfdfd;
+    --cr: #ff3847;
+    --cp: #f97d87;
+    --cb: #0e1a2a;
+    --fp: "Rubik", sans-serif;
+  }
+  html {
+    font: 400 10px / 1.5 var(--fp);
+  }
+  .header {
+    display: block;
+    width: 100%;
+    margin: 2rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+  .header_logo {
+    display: block;
+    transition: transform 0.4s;
+  }
+  /* hamburger item */
+  .header_hamburger {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    transition: transform 0.4s;
+    cursor: pointer;
+    outline: 0;
+  }
+  .header_hamburger svg {
+    display: block;
+  }
+  .hamburger_poly {
+    fill: var(--cr);
+  }
+  .hamburger_line {
+    stroke: var(--cw);
+    stroke-width: 4px;
+    transition: stroke-dashoffset 1s, stroke-dasharray 1s;
+  }
+  .hamburger_top {
+    stroke-dasharray: 40 160;
+    transition-delay: 0.1s;
+  }
+  .hamburger_mid {
+    stroke-dasharray: 40 80;
+  }
+  .hamburger_bot {
+    stroke-dasharray: 40 220;
+    transition-delay: 0.2s;
+  }
+  .header_hamburger.active .hamburger_top {
+    stroke-dashoffset: -153;
+  }
+  .header_hamburger.active .hamburger_mid {
+    stroke-dasharray: 0 80;
+    stroke-dashoffset: -21;
+  }
+  .header_hamburger.active .hamburger_bot {
+    stroke-dashoffset: -216;
+  }
+  .intro_scroll:hover {
+    transform: scale(1.1);
+  }
+  .header_logo:hover {
+    transform: scale(1.1);
+  }
+  .header_hamburger:hover {
+    transform: rotate(15deg);
+  }
+  /* menu */
+  .nav {
+    background: var(--cb);
+    color: var(--cw);
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s, visibility 0s 0.6s;
+  }
+  .nav.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s, 0s;
+  }
+  .nav_list {
+    height: auto;
+    min-height: 100vh;
+    padding: 0 2rem;
+    flex-flow: column wrap;
+  }
+  .nav_item {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0;
+  }
+  .nav_link {
+    color: inherit;
+    display: inline-block;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .listReset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fx {
+    display: flex;
+  }
+  .fx.as {
+    align-items: flex-start;
+  }
+  .fx.ac {
+    align-items: center;
+  }
+  .fx.ae {
+    align-items: flex-end;
+  }
+  .fx.js {
+    justify-content: flex-start;
+  }
+  .fx.jc {
+    justify-content: center;
+  }
+  .fx.je {
+    justify-content: flex-end;
+  }
+  .fx.ja {
+    justify-content: space-around;
+  }
+  .fx.jb {
+    justify-content: space-between;
+  }
+}
